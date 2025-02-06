@@ -31,7 +31,6 @@ let humanChoice = getHumanChoice();
         // then have an if conditional check the response and return their answer to the variable
 function getHumanChoice() {
     let choice = prompt('Rock, Paper, or Scissors').toLowerCase();
-        console.log(choice)
         if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
             return choice
         } else {
@@ -39,5 +38,3 @@ function getHumanChoice() {
         }
     
 }
-
-console.log(humanChoice)
