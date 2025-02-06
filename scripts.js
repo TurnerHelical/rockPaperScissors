@@ -10,13 +10,13 @@ function getComputerChoice() {
     let generatedNumber = (Math.random() * 100)
     console.log(generatedNumber)
         if (generatedNumber <= 33 && generatedNumber >= 0) {
-           return 'Rock'
+           return 'rock'
             }
         else if (generatedNumber <= 66 && generatedNumber >= 34) {
-            return 'Paper'
+            return 'paper'
         }
         else if (generatedNumber <= 99 && generatedNumber >= 67) {
-            return 'Scissors'
+            return 'scissors'
         }
         else {
             getComputerChoice()
@@ -35,6 +35,66 @@ function getHumanChoice() {
             return choice
         } else {
             alert('Please try again');
+            getHumanChoice()
         }
     
 }
+
+// Create a variable named humanScore and assign the number of wins to it
+// Create a variable named computerScore and assign the number of wins to it
+let humanScore = 0;
+let computerScore = 0;
+
+// Create a function named playRound
+    // This function should simulate a round of Rock, Paper, Scissors using the user and computer choice's
+    // using the humanChoice and computerChoice variables output a string that says who wins
+    // incriment humanScore or computerScore depending on who wins
+    // log a string to the console that shows overall wins for each user
+
+function playRound() {
+    console.log(humanChoice);
+    console.log(computerChoice);
+    if (humanChoice === 'rock' && computerChoice === 'scissors'
+        || humanChoice === 'paper' && computerChoice === 'rock' 
+        || humanChoice === 'scissors' && computerChoice === 'paper' ){
+        console.log(`${humanChoice} beats ${computerChoice}!! You win!!!!!`);
+        humanScore++;
+        console.log (`Human Score = ${humanScore} Computer Score = ${computerScore}`);
+        let again = confirm('Play again?');
+            if (again = true) {
+                play();
+            } else {
+                console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
+            }
+    } else if (humanChoice === 'rock' && computerChoice === 'paper'
+        || humanChoice === 'paper' && computerChoice === 'scissors' 
+        || humanChoice === 'scissors' && computerChoice === 'rock') {
+        console.log(`${computerChoice} beats ${humanChoice}. You lose =(`);
+        computerScore++;
+        console.log(`Human Score = ${humanScore} Computer Score = ${computerScore}`);
+        let again = confirm('Play again?');
+        if (again = 1) {
+                play();
+            } else {
+                console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
+            }
+    } else if (humanChoice === computerChoice) {
+        console.log('Tie!!!');
+        let again = confirm('Play again?');
+        if (again = 1) {
+                play();
+            } else {
+                console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
+            };
+    } else {
+        console.log('something broke')
+    }
+}
+
+function play() {
+    computerChoice = getComputerChoice();
+    humanChoice = getHumanChoice();
+    playRound();
+}
+
+
