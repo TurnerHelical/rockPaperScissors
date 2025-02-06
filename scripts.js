@@ -1,5 +1,6 @@
+
 // Create a variable called computerChoice
-let computerChoice = getComputerChoice();
+let computerChoice;
 // Create a function called getComputerChoice and store it's return as computerChoice
     // This function needs to get a random choice between Rock, Paper, or Scissors
     // Run Math.random and take the response times one hundred 
@@ -24,7 +25,8 @@ function getComputerChoice() {
 }
 
 // Create a variable called humanChoice and store the results of the getHumanChoice function
-let humanChoice = getHumanChoice();
+let humanChoice;
+
 // Create a function called getHumanChoice
     // This funtion will prompt the user to enter their choice of Rock, Paper, or Scissors
         // Send their response through a function to turn it all lowercase
@@ -87,7 +89,13 @@ function playRound() {
                 console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
             };
     } else {
-        console.log('something broke')
+        let retry = confirm('Something broke, Refresh and keep going?')
+            if (retry === true) {
+                play();
+            } else {
+                console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
+            }
+
     }
 }
 
@@ -98,3 +106,4 @@ function play() {
 }
 
 
+play()
