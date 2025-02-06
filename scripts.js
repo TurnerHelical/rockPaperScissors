@@ -15,10 +15,22 @@ function getComputerChoice() {
         else if (generatedNumber <= 66 && generatedNumber >= 34) {
             return 'Paper'
         }
-        else if (generatedNumber <=99 && generatedNumber >= 67) {
+        else if (generatedNumber <= 99 && generatedNumber >= 67) {
             return 'Scissors'
         }
         else {
             getComputerChoice()
         }
+}
+
+// Create a variable called humanChoice and store the results of the getHumanChoice function
+let humanChoice = getHumanChoice();
+// Create a function called getHumanChoice
+    // This funtion will prompt the user to enter their choice of Rock, Paper, or Scissors
+        // Send their response through a function to turn it all lowercase
+        // then have an if conditional check the response and return their answer to the variable
+function getHumanChoice() {
+    let answer = prompt('Rock, Paper, or Scissors').toLowerCase()
+    console.log(answer)
+    
 }
