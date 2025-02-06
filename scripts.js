@@ -73,7 +73,7 @@ function playRound() {
         computerScore++;
         console.log(`Human Score = ${humanScore} Computer Score = ${computerScore}`);
         let again = confirm('Play again?');
-        if (again = 1) {
+        if (again = true) {
                 play();
             } else {
                 console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
@@ -81,7 +81,7 @@ function playRound() {
     } else if (humanChoice === computerChoice) {
         console.log('Tie!!!');
         let again = confirm('Play again?');
-        if (again = 1) {
+        if (again = true) {
                 play();
             } else {
                 console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
