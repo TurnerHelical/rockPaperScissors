@@ -30,7 +30,14 @@ let humanChoice = getHumanChoice();
         // Send their response through a function to turn it all lowercase
         // then have an if conditional check the response and return their answer to the variable
 function getHumanChoice() {
-    let answer = prompt('Rock, Paper, or Scissors').toLowerCase()
-    console.log(answer)
+    let choice = prompt('Rock, Paper, or Scissors').toLowerCase();
+        console.log(choice)
+        if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
+            return choice
+        } else {
+            alert('Please try again');
+        }
     
 }
+
+console.log(humanChoice)
