@@ -23,8 +23,6 @@ function getComputerChoice() {
         }
 }
 
-// Create a variable called humanChoice and store the results of the getHumanChoice function
-let humanChoice = getHumanChoice();
 // Create a function called getHumanChoice
     // This funtion will prompt the user to enter their choice of Rock, Paper, or Scissors
         // Send their response through a function to turn it all lowercase
