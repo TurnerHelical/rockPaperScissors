@@ -1,5 +1,5 @@
 // Create a variable called computerChoice
-let computerChoice = getComputerChoice();
+// let computerChoice = getComputerChoice();
 // Create a function called getComputerChoice and store it's return as computerChoice
     // This function needs to get a random choice between Rock, Paper, or Scissors
     // Run Math.random and take the response times one hundred 
@@ -27,16 +27,33 @@ function getComputerChoice() {
     // This funtion will prompt the user to enter their choice of Rock, Paper, or Scissors
         // Send their response through a function to turn it all lowercase
         // then have an if conditional check the response and return their answer to the variable
-function getHumanChoice() {
-    let choice = prompt('Rock, Paper, or Scissors').toLowerCase();
-        if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
-            return choice
-        } else {
-            alert('Please try again');
-            getHumanChoice()
-        }
+// function getHumanChoice() {
+//     let choice = 
+//         if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
+//             return choice
+//         } else {
+//             alert('Please try again');
+//             getHumanChoice()
+//         }
     
-}
+// }
+
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors'); 
+
+
+rockBtn.addEventListener('click',function(e) {
+    playRound('rock');
+})
+
+paperBtn.addEventListener('click', function (e) {
+    playRound('paper');
+})
+
+scissorsBtn.addEventListener('click', function(e){
+    playRound('scissors');
+})
 
 // Create a variable named humanScore and assign the number of wins to it
 // Create a variable named computerScore and assign the number of wins to it
@@ -49,50 +66,27 @@ let computerScore = 0;
     // incriment humanScore or computerScore depending on who wins
     // log a string to the console that shows overall wins for each user
 
-function playRound() {
+function playRound(humanChoice) {
     console.log(humanChoice);
-    console.log(computerChoice);
+    let computerChoice = getComputerChoice();
+    
     if (humanChoice === 'rock' && computerChoice === 'scissors'
         || humanChoice === 'paper' && computerChoice === 'rock' 
         || humanChoice === 'scissors' && computerChoice === 'paper' ){
         console.log(`${humanChoice} beats ${computerChoice}!! You win!!!!!`);
         humanScore++;
         console.log (`Human Score = ${humanScore} Computer Score = ${computerScore}`);
-        let again = confirm('Play again?');
-            if (again = true) {
-                play();
-            } else {
-                console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
-            }
     } else if (humanChoice === 'rock' && computerChoice === 'paper'
         || humanChoice === 'paper' && computerChoice === 'scissors' 
         || humanChoice === 'scissors' && computerChoice === 'rock') {
         console.log(`${computerChoice} beats ${humanChoice}. You lose =(`);
         computerScore++;
-        console.log(`Human Score = ${humanScore} Computer Score = ${computerScore}`);
-        let again = confirm('Play again?');
-        if (again = true) {
-                play();
-            } else {
-                console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
-            }
+        console.log (`Human Score = ${humanScore} Computer Score = ${computerScore}`);
     } else if (humanChoice === computerChoice) {
         console.log('Tie!!!');
-        let again = confirm('Play again?');
-        if (again = true) {
-                play();
-            } else {
-                console.log(`Final Score Human: ${humanScore} Computer: ${computerScore}`)
-            };
     } else {
         console.log('something broke')
     }
-}
-
-function play() {
-    computerChoice = getComputerChoice();
-    humanChoice = getHumanChoice();
-    playRound();
 }
 
 
