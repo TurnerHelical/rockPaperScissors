@@ -1,3 +1,4 @@
+
 // Create a variable called computerChoice
 // let computerChoice = getComputerChoice();
 // Create a function called getComputerChoice and store it's return as computerChoice
@@ -41,7 +42,8 @@ function getComputerChoice() {
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors'); 
-
+const humanImg = document.querySelector('.humanImage');
+const compImg = document.querySelector('.compImage')
 
 rockBtn.addEventListener('click',function(e) {
     playRound('rock');
@@ -66,10 +68,31 @@ let computerScore = 0;
     // incriment humanScore or computerScore depending on who wins
     // log a string to the console that shows overall wins for each user
 
+function imageSelectorHuman(hand) {
+    if (hand === 'rock') {
+        humanImg.src = './images/rock.png';
+    } else if (hand === 'paper') {
+        humanImg.src = './images/paper.png';
+    } else {
+        humanImg.src = './images/scissors.png';
+    }
+}
+
+function imageSelectorComp(hand) {
+    if (hand === 'rock') {
+        compImg.src = './images/rock.png';
+    } else if (hand === 'paper') {
+        compImg.src = './images/paper.png';
+    } else {
+       compImg.src = './images/scissors.png';
+    }
+}
+
 function playRound(humanChoice) {
     console.log(humanChoice);
     let computerChoice = getComputerChoice();
-    
+    imageSelectorHuman(humanChoice);
+    imageSelectorComp(computerChoice);
     if (humanChoice === 'rock' && computerChoice === 'scissors'
         || humanChoice === 'paper' && computerChoice === 'rock' 
         || humanChoice === 'scissors' && computerChoice === 'paper' ){
