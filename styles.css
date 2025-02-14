@@ -44,6 +44,7 @@
 .resultWords {
     text-align: center;
     font-size: 24px;
+    margin-top: 20px;
 }
 
 .btnContainer {
@@ -56,4 +57,5 @@
 
 #startInfo {
     margin-top: -50px;
+    text-align: center;
 }
