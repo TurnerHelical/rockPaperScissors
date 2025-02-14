@@ -38,12 +38,13 @@ function getComputerChoice() {
 //         }
 
 // }
-
+const btnContainer = document.querySelector('.btnContainer')
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 const humanImg = document.querySelector('.humanImage');
 const compImg = document.querySelector('.compImage');
+
 let result = document.querySelector('.resultWords');
 let hScore = document.querySelector('#hScore');
 let cScore = document.querySelector('#cScore');
@@ -83,6 +84,14 @@ function imageSelectorHuman(hand) {
     }
 }
 
+function againButton() {
+    const playAgain = document.createElement('button');
+    playAgain.classList.add('.again');
+    playAgain.textContent = ('Play Again?')
+    const playAgainButton = document.querySelector('.again')
+    btnContainer.append(playAgainButton)
+}
+
 function imageSelectorComp(hand) {
     if (hand === 'rock') {
         compImg.src = './images/rock.png';
@@ -111,14 +120,18 @@ function playRound(humanChoice) {
         roundSpot.textContent = `Round: ${roundNumber}`;
         if (roundNumber >= 5) {
             if (computerScore > humanScore) {
-                alert('Computer wins the game =(');
-                location.reload();
+                result.textContent = ('Computer wins the game =(')
+                roundSpot.textContent = ('<a href = reload()>Play Again?</a>')
+                btnContainer.innerHTML = '';
+                againButton();
             } else if (computerScore < humanScore) {
-                alert('You win!!!!');
-                location.reload();
+                result.textContent = ('You won the game!!!')
+                btnContainer.innerHTML = '';
+                againButton();
             } else {
-                alert('Tie!!!');
-                location.reload();
+                result.textContent = ('It\'s a tie')
+                btnContainer.innerHTML = '';
+                againButton();
             }
         }
     } else if (humanChoice === 'rock' && computerChoice === 'paper'
@@ -132,14 +145,17 @@ function playRound(humanChoice) {
         roundSpot.textContent = `Round: ${roundNumber}`;
         if (roundNumber >= 5) {
             if (computerScore > humanScore) {
-                alert('Computer wins the game =(');
-                location.reload();
+                result.textContent = ('Computer wins the game =(')
+                btnContainer.innerHTML = '';
+                againButton();
             } else if (computerScore < humanScore) {
-                alert('You win!!!!');
-                location.reload();
+                result.textContent = ('You won the game!!!')
+                btnContainer.innerHTML = '';
+                againButton();
             } else {
-                alert('Tie!!!');
-                location.reload();
+                result.textContent = ('It\'s a tie')
+                btnContainer.innerHTML = '';
+                againButton();
             }
         }
     } else if (humanChoice === computerChoice) {
@@ -148,14 +164,17 @@ function playRound(humanChoice) {
         roundSpot.textContent = `Round: ${roundNumber}`;
         if (roundNumber >= 5) {
             if (computerScore > humanScore) {
-                alert('Computer wins the game =(');
-                location.reload();
+                result.textContent = ('Computer wins the game =(')
+                btnContainer.innerHTML = '';
+                againButton();
             } else if (computerScore < humanScore) {
-                alert('You win!!!!');
-                location.reload();
+                result.textContent = ('You won the game!!!')
+                btnContainer.innerHTML = '';
+                againButton();
             } else {
-                alert('Tie!!!');
-                location.reload();
+                result.textContent = ('It\'s a tie')
+                btnContainer.innerHTML = '';
+                againButton();
             }
 
         }
