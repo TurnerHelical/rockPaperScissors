@@ -101,15 +101,15 @@ function playRound(humanChoice) {
         || humanChoice === 'scissors' && computerChoice === 'paper' ){
         result.textContent = `${humanChoice} beats ${computerChoice}!! You win!!!!!`;
         humanScore++;
-        hScore.textContent = `Human Score:${humanScore}`;
-        cScore.textContent = `Computer Score:${computerScore}`;
+        hScore.textContent = `Human Score: ${humanScore}`;
+        cScore.textContent = `Computer Score: ${computerScore}`;
     } else if (humanChoice === 'rock' && computerChoice === 'paper'
         || humanChoice === 'paper' && computerChoice === 'scissors' 
         || humanChoice === 'scissors' && computerChoice === 'rock') {
         result.textContent =`${computerChoice} beats ${humanChoice}. You lose =(`;
         computerScore++;
-        hScore.textContent = `Human Score:${humanScore}`;
-        cScore.textContent = `Computer Score:${computerScore}`;
+        hScore.textContent = `Human Score: ${humanScore}`;
+        cScore.textContent = `Computer Score: ${computerScore}`;
     } else if (humanChoice === computerChoice) {
         result.textContent = 'Tie!!!';
     } else {
