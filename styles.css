@@ -12,7 +12,7 @@
     justify-content: space-between;
 }
 
-.btnContainer{
+.contentContainer{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -34,4 +34,21 @@
     height: 150px;
     width: 150px;
     background-color: white;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.resultWords {
+    text-align: center;
+    font-size: 24px;
+}
+
+.btnContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
 }

@@ -43,7 +43,10 @@ const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors'); 
 const humanImg = document.querySelector('.humanImage');
-const compImg = document.querySelector('.compImage')
+const compImg = document.querySelector('.compImage');
+let result = document.querySelector('.resultWords');
+let hScore = document.querySelector('#hScore');
+let cScore = document.querySelector('#cScore');
 
 rockBtn.addEventListener('click',function(e) {
     playRound('rock');
@@ -96,17 +99,19 @@ function playRound(humanChoice) {
     if (humanChoice === 'rock' && computerChoice === 'scissors'
         || humanChoice === 'paper' && computerChoice === 'rock' 
         || humanChoice === 'scissors' && computerChoice === 'paper' ){
-        console.log(`${humanChoice} beats ${computerChoice}!! You win!!!!!`);
+        result.textContent = `${humanChoice} beats ${computerChoice}!! You win!!!!!`;
         humanScore++;
-        console.log (`Human Score = ${humanScore} Computer Score = ${computerScore}`);
+        hScore.textContent = `Human Score:${humanScore}`;
+        cScore.textContent = `Computer Score:${computerScore}`;
     } else if (humanChoice === 'rock' && computerChoice === 'paper'
         || humanChoice === 'paper' && computerChoice === 'scissors' 
         || humanChoice === 'scissors' && computerChoice === 'rock') {
-        console.log(`${computerChoice} beats ${humanChoice}. You lose =(`);
+        result.textContent =`${computerChoice} beats ${humanChoice}. You lose =(`;
         computerScore++;
-        console.log (`Human Score = ${humanScore} Computer Score = ${computerScore}`);
+        hScore.textContent = `Human Score:${humanScore}`;
+        cScore.textContent = `Computer Score:${computerScore}`;
     } else if (humanChoice === computerChoice) {
-        console.log('Tie!!!');
+        result.textContent = 'Tie!!!';
     } else {
         console.log('something broke')
     }
