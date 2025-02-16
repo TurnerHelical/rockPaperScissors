@@ -86,10 +86,12 @@ function imageSelectorHuman(hand) {
 
 function againButton() {
     const playAgain = document.createElement('button');
-    playAgain.classList.add('.again');
-    playAgain.textContent = ('Play Again?')
-    const playAgainButton = document.querySelector('.again')
-    btnContainer.append(playAgainButton)
+    playAgain.className= 'again';
+    playAgain.textContent = ('Play Again?');
+    playAgain.addEventListener('click', function() {
+        location.reload();
+    })
+    btnContainer.appendChild(playAgain)
 }
 
 function imageSelectorComp(hand) {
@@ -122,15 +124,21 @@ function playRound(humanChoice) {
             if (computerScore > humanScore) {
                 result.textContent = ('Computer wins the game =(')
                 roundSpot.textContent = ('<a href = reload()>Play Again?</a>')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             } else if (computerScore < humanScore) {
                 result.textContent = ('You won the game!!!')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             } else {
                 result.textContent = ('It\'s a tie')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             }
         }
@@ -146,15 +154,21 @@ function playRound(humanChoice) {
         if (roundNumber >= 5) {
             if (computerScore > humanScore) {
                 result.textContent = ('Computer wins the game =(')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             } else if (computerScore < humanScore) {
                 result.textContent = ('You won the game!!!')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             } else {
                 result.textContent = ('It\'s a tie')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             }
         }
@@ -165,15 +179,21 @@ function playRound(humanChoice) {
         if (roundNumber >= 5) {
             if (computerScore > humanScore) {
                 result.textContent = ('Computer wins the game =(')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             } else if (computerScore < humanScore) {
                 result.textContent = ('You won the game!!!')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();
                 againButton();
             } else {
                 result.textContent = ('It\'s a tie')
-                btnContainer.innerHTML = '';
+                rockBtn.remove();
+                paperBtn.remove();
+                scissorsBtn.remove();;
                 againButton();
             }
 

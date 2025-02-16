@@ -79,3 +79,15 @@ h1 {
 .round {
     text-align: center;
 }
+
+.again {
+    font-size: 48px;
+    background-color: #C1D1F5;
+    border-radius: 10px;
+}
+
+.selectionBtn {
+    font-size: 32px;
+    background-color: #C1D1F5;
+    border-radius: 10px;
+}
