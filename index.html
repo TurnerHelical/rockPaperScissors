@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <img src="./images/cartoonWeird.png" alt="" id="headerImage">
+        <div class="scoreContainer">
+            <h2 id="hScore">Human Score:</h2>
+            <h2 id="cScore">Computer Score:</h2>
+        </div>
+        <div class="contentContainer">
+            <img src="./images/allThree.jpeg" alt="picture of the humanChoice" class="humanImage">
+            <div class="mainContainer">
+                <h3 id="startInfo">Make your selection to start the game.</h3>
+                <div class="btnContainer">
+                    <button id="rock" class="selectionBtn">Rock</button>
+                    <button id="paper" class="selectionBtn">Paper</button>
+                    <button id="scissors" class="selectionBtn">Scissors</button>
+                </div>
+                <p class="resultWords"></p>
+                <p class="round"></p>
+            </div>
+            <img src="./images/allThree.jpeg" alt="picture of the compChoice" class="compImage">
+        </div>
+    </div>
     <script src="scripts.js"></script>
 </body>
+
 </html>
